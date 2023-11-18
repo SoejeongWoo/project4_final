@@ -1,13 +1,25 @@
 package com.example.crudprojectjsp.util;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class MariaDBConection {
     public static Connection getConnection(){
-        Connection conn = null;
+        Connection con=null;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con= DriverManager.getConnection("jdbc:mysql://walab.handong.edu:3306/p233_22200461","p233_22200461","li7Cha");
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return con;
+    }
 
-        Class.formName(Classname: "org.mariadb.jdbc.Driver");
-    }catch (ClassFoundException e){
-        System.out.println("드라이버 로드 오류!");
+    public static void main(String ars[]) {
+        Connection conn = getConnection();
+        if(conn != null)
+            System.out.println("DB 연결됨!");
+        else
+            System.out.println("DB 연결중 오류 !");
     }
 }
