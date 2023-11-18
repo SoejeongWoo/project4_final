@@ -1,56 +1,56 @@
 package com.example.crudprojectjsp;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class DramaVO {
 
-    private Integer DramaID;
-    private String DramaName;
-    private String DramaPoster;
-    private LocalDateTime ReleaseDate;
-    private String Genre;
+    private Integer dramaId;
+    private String dramaName;
+    private String dramaPoster;
+    private Date releaseDate;
+    private String genre;
     private String summary;
-    private LocalDateTime Regdate;
-    private LocalDateTime modDate;
+    private Date regDate;
+    private Date modDate;
 
-    public Integer getDramaID() {
-        return DramaID;
+    public Integer getDramaId() {
+        return dramaId;
     }
 
-    public void setDramaID(Integer dramaID) {
-        DramaID = dramaID;
+    public void setDramaId(Integer dramaId) {
+        this.dramaId = dramaId;
     }
 
     public String getDramaName() {
-        return DramaName;
+        return dramaName;
     }
 
     public void setDramaName(String dramaName) {
-        DramaName = dramaName;
+        this.dramaName = dramaName;
     }
 
     public String getDramaPoster() {
-        return DramaPoster;
+        return dramaPoster;
     }
 
     public void setDramaPoster(String dramaPoster) {
-        DramaPoster = dramaPoster;
+        this.dramaPoster = dramaPoster;
     }
 
-    public LocalDateTime getReleaseDate() {
-        return ReleaseDate;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setReleaseDate(LocalDateTime releaseDate) {
-        ReleaseDate = releaseDate;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public String getGenre() {
-        return Genre;
+        return genre;
     }
 
     public void setGenre(String genre) {
-        Genre = genre;
+        this.genre = genre;
     }
 
     public String getSummary() {
@@ -61,19 +61,33 @@ public class DramaVO {
         this.summary = summary;
     }
 
-    public LocalDateTime getRegdate() {
-        return Regdate;
+    public Date getRegDate() {
+        return regDate;
     }
 
-    public void setRegdate(LocalDateTime regdate) {
-        Regdate = regdate;
+    public void setRegDate(Date regDate) {
+        this.regDate = regDate;
     }
 
-    public LocalDateTime getModDate() {
+    public Date getModDate() {
         return modDate;
     }
 
-    public void setModDate(LocalDateTime modDate) {
+    public void setModDate(Date modDate) {
         this.modDate = modDate;
+    }
+
+    @Override
+    public String toString() {
+        return "DramaVO{" +
+                "dramaId=" + dramaId +
+                ", dramaName='" + dramaName + '\'' +
+                ", dramaPoster='" + dramaPoster + '\'' +
+                ", releaseDate=" + releaseDate +
+                ", genre='" + genre + '\'' +
+                ", summary='" + summary + '\'' +
+                ", regDate=" + regDate +
+                ", modDate=" + modDate +
+                '}';
     }
 }
