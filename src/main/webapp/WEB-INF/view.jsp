@@ -1,7 +1,5 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en" data-bs-theme="dark"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -17,17 +15,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/5.3/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.3/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.3/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="/docs/5.3/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
-
+    <link href="my.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
         .bd-placeholder-img {
@@ -192,70 +180,40 @@
 
 <main>
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">오늘의 추천 드라마</h1>
-                <p class="lead text-body-secondary">-------<br>오늘도 무슨 드라마를 보면 좋을지 고민하고 계신 분들, 다양한 장르, 시대배경, 줄거리를 가진 드라마를 추천받아 보새요. 숨은 명작도 찾아주는 드라마 MUSE.</p>
-            </div>
-        </div>
-    </section>
-
     <div class="album py-5 bg-body-tertiary">
         <div class="container">
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg onclick="window.location='add.html';" class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image style="display: block; margin: auto" xlink:href="plus.png" x="40%" y="40%" height="100" width="100"></image>
-                        </svg>
-                    </div>
-                </div>
-
-                <c:forEach var="drama" items="${dramas}">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
                         <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
                             <image xlink:href=${drama.dramaPoster} height="100%" width="100%" ></image>
                         </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>${drama.dramaName}(${drama.releaseDate})</u></strong><br>${drama.summary}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='/drama?dramaId=${drama.dramaId}'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <div style="text-align: center">
+                            <strong style="align: center"><u>${drama.dramaPoster}(${drama.releaseDate})</u></strong><br>
+                            장르: ${drama.genre}<br><br>
+                        </div>
+                        <p class="card-text" style="height: 80%; width: 100%">
+                            ${drama.summary}
+                        </p>
+                        <div class="btn-group">
+                            <button type="button" onclick="window.location='/home'" class="btn btn-sm btn-outline-secondary">뒤로가기</button>
                         </div>
                     </div>
                 </div>
-                </c:forEach>
-
 
             </div>
+
         </div>
     </div>
 
-
-
-
-
-
 </main>
 
-<footer class="text-body-secondary py-5">
-    <div class="container">
-        <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-        </p>
-        <p class="mb-1">(주) 드라마 MUSE</p>
-        <p class="mb-0">문의: Dremamuse@examplemail.com</p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
 
 

@@ -24,8 +24,8 @@ public class IndexServlet extends HttpServlet {
 
             String summary = dramaVO.getSummary();
             if (summary.length()> 150){
-            summary = summary.substring(0, 84) + "...";
-        }
+                summary = summary.substring(0, 84) + "...";
+            }
             dramaVO.setSummary(summary);
 
         }
