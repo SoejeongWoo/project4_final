@@ -18,6 +18,18 @@ public class IndexServlet extends HttpServlet {
 
         DramaDAO dramaDAO = new DramaDAO();
         List<DramaVO> dramaInfoList = dramaDAO.getDramaInfoList();
+
+        for (int i=0;i<dramaInfoList.size();i++) {
+            DramaVO dramaVO = dramaInfoList.get(i);
+
+            String summary = dramaVO.getSummary();
+            if (summary.length()> 150){
+            summary = summary.substring(0, 84) + "...";
+        }
+            dramaVO.setSummary(summary);
+
+        }
+
         request.setAttribute("dramas", dramaInfoList);
 
         request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
