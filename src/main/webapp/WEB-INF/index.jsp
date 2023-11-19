@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en" data-bs-theme="dark"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
 
     <meta charset="utf-8">
@@ -212,13 +213,14 @@
                     </div>
                 </div>
 
+                <c:forEach var="drama" items="${dramas}">
                 <div class="col">
                     <div class="card shadow-sm">
                         <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="a.png" height="100%" width="100%" ></image>
+                            <image xlink:href=${drama.dramaPoster} height="100%" width="100%" ></image>
                         </svg>
                         <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>나의아저씨(2018)</u></strong><br>길거리에 넘쳐나는 흔하디 흔한 아저씨들. 허름하고 한심하게 보이던 그들이, 사랑스러워 죽을 것이다.눈물 나게 낄낄대며 보다가,끝내 펑펑 울 것이다.나의 ...</p>
+                            <p class="card-text" style="height: 100px"><strong><u>${drama.dramaName}(${drama.releaseDate})</u></strong><br>${drama.summary}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
                                     <button type="button" onclick="window.location='view.html'" class="btn btn-sm btn-outline-secondary">보기</button>
@@ -230,144 +232,7 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="Memories of the Alhambra.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>알함브라 궁전의 추억(2018)</u></strong><br>투자회사 대표인 ‘유진우’가 비즈니스로 스페인 그라나다에 방문하고, 여주인공 ‘정희주’가 운영하는 오래된 호스텔에 묵게 되면서 기묘한 사건에 휘말리는 이...</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view1.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="Iljimae.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>알지매(2009)</u></strong><br>왕이랍시고 양반이랍시고 꼴값을 떠는 작자들을 시원하게 혼내주는 멋진 사내가 백성들의 꿈속에 살고 있었다. "이 도적놈의 세상~ 지금부터 나, 일지매가 접...</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view2.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="Born Again.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>본 어게인(2020)</u></strong><br>그들은 모두 사랑 때문에 죽었고 사랑 때문에 다시 태어났다. 다시 태어나서라도 꼭 갖고 싶은 처절한 사랑이 있을까? 여기, 사랑으로 얽힌 지독한 악연 때문...</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view3.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="Healer.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>힐러(2014)</u></strong><br>80년 해적방송 당시 준석, 길한, 문호 명희, 기영재 가 친구였다. 92년 어느날 비자금 사건을 수사하다 길한과 준석이 죽고, 문식은 길한의 여자였던 명희를....</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view4.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="Windy Mi-poong.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>불어라 미풍아(2016)</u></strong><br>여기 한 남자가 있다. 그에게는 아내도 있었고 부모도 있었고 형제도 있었고 가족도 있었다. 하지만 한국전쟁 때 가족과 헤어진 그는 60년이 넘도록 헤어진...</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view5.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="Guardian.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>도깨비(2016)</u></strong><br>누구의 인생이건 신이 머물다 가는 순간이 있다. 당신이 세상에서 멀어지고 있을 때 누군가 세상 쪽으로 등을 떠밀어 주었다면 그건, 신이 당신 곁에 머물다 가...</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view6.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href="The Red Sleeve.png" height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>옷소매 붉은 끝동(2021)</u></strong><br>도깨비보다 무섭다는 왕이 있었다. 왕은 사내이기 이전에 임금이다. 사랑하는 여인보다 일국의 운명이 우선이고, 만백성의 안위가 먼저다. 사랑은 저 먼 끝순...</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='view7.html'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
+                </c:forEach>
 
 
             </div>
