@@ -1,17 +1,16 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html lang="en" data-bs-theme="dark"><head><script src="/docs/5.3/assets/js/color-modes.js"></script>
+<html lang="en" data-bs-theme="dark"><head><script src="color-modes.js"></script>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.118.2">
-    <title>Album example · Bootstrap v5.3</title>
+    <meta name="author" content="Mark Otto, Jacob Thornton, 그리고 Bootstrap 기여자들">
+    <meta name="generator" content="Hugo 0.115.4">
+    <title>Checkout example · Bootstrap v5.3</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
+    <link rel="canonical" href="https://getbootstrap.kr/docs/5.3/examples/checkout/">
 
 
 
@@ -98,19 +97,27 @@
             --bs-btn-active-bg: #5a23c8;
             --bs-btn-active-border-color: #5a23c8;
         }
-
         .bd-mode-toggle {
             z-index: 1500;
-        }
-
-        .bd-mode-toggle .dropdown-menu .active .bi {
-            display: block !important;
         }
     </style>
 
 
+    <!-- Custom styles for this template -->
+    <link href="checkout.css" rel="stylesheet">
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                <strong>드라마 MUSE</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
 </head>
-<body class="vsc-initialized">
+<body class="bg-body-tertiary vsc-initialized">
 <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
     <symbol id="check2" viewBox="0 0 16 16">
         <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
@@ -158,105 +165,75 @@
 </div>
 
 
-<header data-bs-theme="dark">
-    <div class="collapse text-bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-8 col-md-7 py-4">
-                    <h4>About</h4>
-                    <p class="text-body-secondary">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>
-                </div>
-                <div class="col-sm-4 offset-md-1 py-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Follow on Twitter</a></li>
-                        <li><a href="#" class="text-white">Like on Facebook</a></li>
-                        <li><a href="#" class="text-white">Email me</a></li>
-                    </ul>
-                </div>
-            </div>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <h2>드라마 추가하기</h2>
         </div>
-    </div>
-    <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <a href="/home" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                <strong>드라마 MUSE</strong>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </div>
-</header>
 
-<main>
-
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-            <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light">오늘의 추천 드라마</h1>
-                <p class="lead text-body-secondary">-------<br>오늘도 무슨 드라마를 보면 좋을지 고민하고 계신 분들, 다양한 장르, 시대배경, 줄거리를 가진 드라마를 추천받아 보새요. 숨은 명작도 찾아주는 드라마 MUSE.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg onclick="window.location='/addForm';" class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image style="display: block; margin: auto" xlink:href="plus.png" x="40%" y="40%" height="100" width="100"></image>
-                        </svg>
-                    </div>
-                </div>
-
-                <c:forEach var="drama" items="${dramas}">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href=${drama.dramaPoster} height="100%" width="100%" ></image>
-                        </svg>
-                        <div class="card-body">
-                            <p class="card-text" style="height: 100px"><strong><u>${drama.dramaName}(${drama.releaseDate})</u></strong><br>${drama.summary}</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button type="button" onclick="window.location='/drama?dramaId=${drama.dramaId}'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
-
-                                </div>
-                                <button type="button" id="deleteButton" style="float: right" onclick='javascript:window.open("http://localhost:8080/deleteForm?dramaId=${drama.dramaId}", "_blank", "scrollbars=1,resizable=1,height=100,width=270")' class="btn btn-sm btn-outline-secondary">삭제</button>
+        <div class="row g-5" style="display: block;  margin-left: auto; margin-right: auto;">
+            <div class="col-md-7 col-lg-8" style="display: block;  margin-left: auto; margin-right: auto;">
+                <form action="/add" method="post" class="needs-validation" novalidate="">
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            <label for="dramaPoster" class="form-label">메인 이미지</label>
+                            <input type="file" class="form-control" name="dramaPoster" id="dramaPoster" placeholder="" value="" required="">
+                            <div class="invalid-feedback">
+                                메인 이미지는 필수 입력입니다.
                             </div>
                         </div>
+
+                        <div class="col-12">
+                            <label for="dramaName" class="form-label">드라마 제목</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" name="dramaName" id="dramaName" placeholder="드라마 제목을 입력하세요" required="">
+                                <div class="invalid-feedback">
+                                    제목은 필수 입력입니다.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="releaseDate" class="form-label">출시연도 <span class="text-body-secondary"></span></label>
+                            <input type="date" class="form-control" name="releaseDate" id="releaseDate" placeholder="you@example.com">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address for shipping updates.
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="genre" class="form-label">장르</label>
+                            <select class="form-select" name="genre" id="genre" required="">
+                                <option value="스릴러">스릴러</option>
+                                <option value="로맨스">로맨스</option>
+                                <option value="액션">액션</option>
+                                <option value="코미디">코미디</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select a valid country.
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <label for="summary" class="form-label">줄거리 <span class="text-body-secondary"></span></label>
+                            <input type="textarea" class="form-control" name="summary" id="summary" placeholder="줄거리를 입력해주세요."></textarea>
+                        </div>
+
                     </div>
-                </div>
-                </c:forEach>
 
+                    <br>
 
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">저장</button>
+                </form>
             </div>
         </div>
-    </div>
-
-
-
-
-
-
-</main>
-
-<footer class="text-body-secondary py-5">
-    <div class="container">
-        <p class="float-end mb-1">
-            <a href="#">Back to top</a>
-        </p>
-        <p class="mb-1">(주) 드라마 MUSE</p>
-        <p class="mb-0">문의: Dremamuse@examplemail.com</p>
-    </div>
-</footer>
+    </main>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="checkout.js"></script>
 
+<script>
 
+</script>
 
 </body></html>

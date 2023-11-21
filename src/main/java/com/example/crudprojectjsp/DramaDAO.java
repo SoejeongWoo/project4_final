@@ -7,6 +7,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +36,8 @@ public class DramaDAO {
             stmt.setDate(3, Date.valueOf(dateFormat.format(vo.getReleaseDate())));
             stmt.setString(4, vo.getGenre());
             stmt.setString(5, vo.getSummary());
-            stmt.setDate(6, Date.valueOf(dateFormat.format(vo.getRegDate())));
-            stmt.setDate(7, Date.valueOf(dateFormat.format(vo.getModDate())));
+            stmt.setDate(6, Date.valueOf(LocalDate.now()));
+            stmt.setDate(7, Date.valueOf(LocalDate.now()));
             stmt.executeUpdate();
             return 1;
         } catch (Exception e) {
