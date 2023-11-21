@@ -194,8 +194,8 @@
                 <div class="col">
                     <div class="card-body">
                         <div style="text-align: center">
-                            <strong style="align: center"><u>${drama.dramaPoster}(${drama.releaseDate})</u></strong><br>
-                            장르: ${drama.genre}<br><br>
+                            <strong style="align: center"><u>${drama.dramaName}(${drama.releaseDate})</u></strong><br>
+                            장르: ${drama.genre}<br><br>2
                         </div>
                         <p class="card-text" style="height: 80%; width: 100%">
                             ${drama.summary}

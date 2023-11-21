@@ -227,7 +227,7 @@
                                     <button type="button" onclick="window.location='edit.html'" class="btn btn-sm btn-outline-secondary">수정</button>
 
                                 </div>
-                                <button type="button" style="float: right" onclick="alert('게시물을 삭제할까요?')" class="btn btn-sm btn-outline-secondary">삭제</button>
+                                <button type="button" id="deleteButton" style="float: right" onclick='javascript:window.open("http://localhost:8080/deleteForm?dramaId=${drama.dramaId}", "_blank", "scrollbars=1,resizable=1,height=100,width=270")' class="btn btn-sm btn-outline-secondary">삭제</button>
                             </div>
                         </div>
                     </div>

@@ -46,12 +46,12 @@ public class DramaDAO {
     }
 
     // 글 삭제
-    public void deleteDrama(DramaVO vo) {
+    public void deleteDrama(Integer dramaId) {
         System.out.println("===> JDBC로 deleteDrama() 기능 처리");
         try {
             conn = MariaDBConection.getConnection();
             stmt = conn.prepareStatement(DRAMA_DELETE);
-            stmt.setInt(1, vo.getDramaId());
+            stmt.setInt(1, dramaId);
             stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
