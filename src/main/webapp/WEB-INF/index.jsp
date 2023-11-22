@@ -207,7 +207,7 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg onclick="window.location='/addForm';" class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
+                        <svg onclick="window.location='/p233_22200461_2/addForm';" class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
                             <image style="display: block; margin: auto" xlink:href="plus.png" x="40%" y="40%" height="100" width="100"></image>
                         </svg>
                     </div>
@@ -217,17 +217,17 @@
                 <div class="col">
                     <div class="card shadow-sm">
                         <svg class="bd-placeholder-img card-img-top" width="100%" height="535" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <image xlink:href=${drama.dramaPoster} height="100%" width="100%" ></image>
+                            <image xlink:href=/p233_22200461_2/${drama.dramaPoster} height="100%" width="100%" ></image>
                         </svg>
                         <div class="card-body">
                             <p class="card-text" style="height: 100px"><strong><u>${drama.dramaName}(${drama.releaseDate})</u></strong><br>${drama.summary}</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" onclick="window.location='/drama?dramaId=${drama.dramaId}'" class="btn btn-sm btn-outline-secondary">보기</button>
-                                    <button type="button" onclick="window.location='/updateForm?dramaId=${drama.dramaId}'" class="btn btn-sm btn-outline-secondary">수정</button>
+                                    <button type="button" onclick="window.location='/p233_22200461_2/drama?dramaId=${drama.dramaId}'" class="btn btn-sm btn-outline-secondary">보기</button>
+                                    <button type="button" onclick="window.location='/p233_22200461_2/updateForm?dramaId=${drama.dramaId}'" class="btn btn-sm btn-outline-secondary">수정</button>
 
                                 </div>
-                                <button type="button" id="deleteButton" style="float: right" onclick='javascript:window.open("http://localhost:8080/deleteForm?dramaId=${drama.dramaId}", "_blank", "scrollbars=1,resizable=1,height=100,width=270")' class="btn btn-sm btn-outline-secondary">삭제</button>
+                                <button type="button" id="deleteButton" style="float: right" onclick='javascript:window.open("http://walab.handong.edu:8080//p233_22200461_2/deleteForm?dramaId=${drama.dramaId}", "_blank", "scrollbars=1,resizable=1,height=100,width=270")' class="btn btn-sm btn-outline-secondary">삭제</button>
                             </div>
                         </div>
                     </div>

@@ -17,7 +17,7 @@ public class DeleteServlet extends HttpServlet {
         DramaDAO dramaDAO = new DramaDAO();
         dramaDAO.deleteDrama(dramaId);
 
-        response.sendRedirect("http://localhost:8080/deleteForm?isDeleted=true");
+        response.sendRedirect("http://walab.handong.edu:8080//p233_22200461_2/deleteForm?isDeleted=true");
     }
 
 }

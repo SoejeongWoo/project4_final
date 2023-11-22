@@ -21,7 +21,7 @@ public class DramaDAO {
 
 
     private final String DRAMA_INSERT = "insert into DramaInfo (DramaName, DramaPoster, ReleaseDate, Genre, Summary, Regdate, Moddate) values (?,?,?,?,?,?,?)";
-    private final String DRAMA_UPDATE = "update DramaInfo set DramaName=?, DramaPoster=?, ReleaseDate=?, Genre=?, Summary=?, Regdate=?, Moddate=? where DramaId=?";
+    private final String DRAMA_UPDATE = "update DramaInfo set DramaName=?, DramaPoster=?, ReleaseDate=?, Genre=?, Summary=?, Moddate=? where DramaId=?";
     private final String DRAMA_DELETE = "delete from DramaInfo where DramaId=?";
     private final String DRAMA_GET = "select * from DramaInfo where DramaId=?";
     private final String DRAMA_LIST = "select * from DramaInfo order by DramaId desc";
@@ -68,9 +68,8 @@ public class DramaDAO {
             stmt.setDate(3, Date.valueOf(dateFormat.format(vo.getReleaseDate())));
             stmt.setString(4, vo.getGenre());
             stmt.setString(5, vo.getSummary());
-            stmt.setDate(6, Date.valueOf(dateFormat.format(vo.getRegDate())));
-            stmt.setDate(7, Date.valueOf(dateFormat.format(vo.getModDate())));
-            stmt.setInt(8, vo.getDramaId());
+            stmt.setDate(6, Date.valueOf(LocalDate.now()));
+            stmt.setInt(7, vo.getDramaId());
 
             System.out.println(vo);
             stmt.executeUpdate();

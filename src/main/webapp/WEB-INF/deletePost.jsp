@@ -9,7 +9,7 @@
 
 <c:if test="${empty param.isDeleted}">
     <div class="form-group" style="display: flex; justify-content: center;">
-        <button class="btn btn-danger" style="margin-top: 20px; margin-right: 50px" onclick="window.location='/delete?dramaId=${param.dramaId}'">확인</button>
+        <button class="btn btn-danger" style="margin-top: 20px; margin-right: 50px" onclick="window.location='/p233_22200461_2/delete?dramaId=${param.dramaId}'">확인</button>
         <button class="btn btn-warning" style="margin-top: 20px;" onclick='javascript:window.close()'>취소</button>
     </div>
 </c:if>

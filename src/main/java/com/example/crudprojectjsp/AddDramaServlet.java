@@ -37,7 +37,7 @@ public class AddDramaServlet extends HttpServlet {
 
         dramaDAO.insertDrama(dramaVO);
 
-        response.sendRedirect("/home");
+        response.sendRedirect("/p233_22200461_2/");
     }
 
 }

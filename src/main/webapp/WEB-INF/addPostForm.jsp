@@ -173,7 +173,7 @@
 
         <div class="row g-5" style="display: block;  margin-left: auto; margin-right: auto;">
             <div class="col-md-7 col-lg-8" style="display: block;  margin-left: auto; margin-right: auto;">
-                <form action="/add" method="post" class="needs-validation" novalidate="">
+                <form action="/p233_22200461_2/add" method="post" class="needs-validation" novalidate="">
                     <div class="row g-3">
                         <div class="col-sm-6">
                             <label for="dramaPoster" class="form-label">메인 이미지</label>
@@ -223,7 +223,7 @@
 
                     <br>
 
-                    <button class="w-100 btn btn-primary btn-lg" type="submit">저장</button>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" onclick='alert("게시물이 저장되었습니다.")'>저장</button>
                 </form>
             </div>
         </div>
